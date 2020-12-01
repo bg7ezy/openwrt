@@ -60,7 +60,7 @@ jobs:
           CONFIG_TARGET_ramips_mt7621=y
           CONFIG_TARGET_ramips_mt7621_DEVICE_ubnt-erx=y
           CONFIG_TARGET_BOARD="ramips"
-          CONFIG_PACKAGE_luci-app-ssr-plus=y
+          #CONFIG_PACKAGE_luci-app-ssr-plus=y
           EOF
           make defconfig
 
