@@ -49,7 +49,8 @@ jobs:
 
       - name: Update feeds
         run: |
-          sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+          #sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+          echo "src-git laohu https://github.com/huchanghui123/Lienol-openwrt-packages-backup" >>./feeds.conf.default
           rm -rf feeds
           ./scripts/feeds clean
           ./scripts/feeds update -a
@@ -62,7 +63,7 @@ jobs:
           CONFIG_TARGET_ramips_mt7621=y
           CONFIG_TARGET_ramips_mt7621_DEVICE_ubnt-erx=y
           CONFIG_TARGET_BOARD="ramips"
-          #CONFIG_PACKAGE_luci-app-ssr-plus=y
+          CONFIG_PACKAGE_luci-app-passwall=y
           EOF
           make defconfig
 
